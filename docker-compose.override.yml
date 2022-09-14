@@ -35,8 +35,8 @@ services:
       readthedocs:
         ipv4_address: 10.10.0.100
     environment:
-      - NGINX_WEB_SERVER_NAME=${NGINX_WEB_SERVER_NAME:-yahor-viarenich.link}
-      - NGINX_PROXITO_SERVER_NAME=${NGINX_PROXITO_SERVER_NAME:-*.yahor-viarenich.link *.build.yahor-viarenich.link}
+      - NGINX_WEB_SERVER_NAME=${NGINX_WEB_SERVER_NAME:-readthedocs.link}
+      - NGINX_PROXITO_SERVER_NAME=${NGINX_PROXITO_SERVER_NAME:-*.readthedocs.link *.build.readthedocs.link}
 
   proxito:
     image: community_server:latest
@@ -55,7 +55,7 @@ services:
       - DJANGO_SETTINGS_MODULE=readthedocs.settings.web_docker
       - HOSTIP=${HOSTIP:-}
     extra_hosts:
-      - "${NGINX_WEB_SERVER_NAME:-yahor-viarenich.link}:10.10.0.100"
+      - "${NGINX_WEB_SERVER_NAME:-readthedocs.link}:10.10.0.100"
 
   celery:
     image: community_server:latest

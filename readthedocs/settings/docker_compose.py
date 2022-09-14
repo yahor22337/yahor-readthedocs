@@ -15,15 +15,15 @@ class DockerBaseSettings(CommunityDevSettings):
     DOCKER_LIMITS = {'memory': '1g', 'time': 900}
     USE_SUBDOMAIN = True
 
-    PRODUCTION_DOMAIN = os.environ.get('RTD_PRODUCTION_DOMAIN', 'yahor-viarenich.link')
-    PUBLIC_DOMAIN = os.environ.get('RTD_PUBLIC_DOMAIN', 'yahor-viarenich.link')
+    PRODUCTION_DOMAIN = os.environ.get('RTD_PRODUCTION_DOMAIN', 'readthedocs.link')
+    PUBLIC_DOMAIN = os.environ.get('RTD_PUBLIC_DOMAIN', 'readthedocs.link')
     PUBLIC_API_URL = f'http://{PRODUCTION_DOMAIN}'
 
     SLUMBER_API_HOST = 'http://web:8000'
     SLUMBER_USERNAME = 'admin'
     SLUMBER_PASSWORD = 'admin'
 
-    RTD_EXTERNAL_VERSION_DOMAIN = 'build.yahor-viarenich.link'
+    RTD_EXTERNAL_VERSION_DOMAIN = 'build.readthedocs.link'
 
     STATIC_URL = '/static/'
 
@@ -63,7 +63,7 @@ class DockerBaseSettings(CommunityDevSettings):
     @property
     def RTD_EXT_THEME_DEV_SERVER(self):
         if self.RTD_EXT_THEME_DEV_SERVER_ENABLED:
-            return "http://assets.yahor-viarenich.link:10001"
+            return "http://assets.readthedocs.link:10001"
 
     # Enable auto syncing elasticsearch documents
     ELASTICSEARCH_DSL_AUTOSYNC = 'SEARCH' in os.environ
